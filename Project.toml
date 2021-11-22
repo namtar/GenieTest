@@ -2,3 +2,6 @@ name = "GenieTest"
 uuid = "01532fa2-a354-4ce6-891b-33b3d3af30a3"
 authors = ["mdrummer "]
 version = "0.1.0"
+
+[deps]
+Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"

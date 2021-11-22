@@ -11,6 +11,22 @@ Im Workspace erzeuge ein neues Projekt mit
 
 
 ### Activate
+Aktivierung im Repl, wenn man sich im Package Mode befindet
+> activate .
+
+Der Punkt gibt an, dass das aktuelle Verzeichnis der Ort der Aktivierung ist.
+
+Man kann aber auch folgendes Schreiben. Das verdeutlicht es etwas.
+
+```julia
+using Pkg
+?Pkg.activate
+# Das gibt einige Beispiele aus.
+Pkg.activate()
+Pkg.activate("local/path")
+Pkg.activate("MyDependency")
+```
+
 TODO: Erkläre was Activate macht
 
 ### Package
@@ -46,4 +62,6 @@ Package Mode mit Backspace verlassen
     * Lowercase without underscore
     * Funktionen die ihre Parameter verändern müsssen ein ! am Ende haben
 
-
+### Kommentare
+Ein Single Line Julia Kommentar beginnt mit einem Hashtag #  
+Ein Multi Line Julia Kommentar beginnt mit #= und endet mit =#
