@@ -26,8 +26,32 @@ Pkg.activate()
 Pkg.activate("local/path")
 Pkg.activate("MyDependency")
 ```
+Ich aktiviere das Testprojekt so.
+```julia
+Pkg.activate(".")
+```
 
-TODO: Erkläre was Activate macht
+#### Instantiate
+Nachdem man das Projekt aktiviert hat muss man u.U die definierten Packages instanziieren. Hierzu gibt es Pkg.instantiate.
+
+```julia
+using Pkg
+?Pkg.instantiate
+#=
+ Pkg.instantiate(; verbose = false, io::IO=stderr)
+
+  If a Manifest.toml file exists in the active project, download all the packages declared in that manifest. Otherwise, resolve
+  a set of feasible packages from the Project.toml files and install them. verbose = true prints the build output to
+  stdout/stderr instead of redirecting to the build.log file. If no Project.toml exist in the current active project, create
+  one with all the dependencies in the manifest and instantiate the resulting project.
+=#
+```
+Das heißt. Gibt es eine Manifest.toml, dann lade alle deklarierten Packages herunter. Gibt es diese nicht, was sein kann wenn wie bei uns die Manifest.toml in der .gitignore steht, dann werden die nötigen Packages über die Project.toml aufgelöst und eine Manifest.toml angelegt.
+
+Wichtig dabei ist, dass man **verbose = true** angibt
+```julia
+Pkg.instantiate(verbose = true)
+```
 
 ### Package
 Im Repl in den Package Mode wechseln Taste: ]
