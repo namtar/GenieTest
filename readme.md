@@ -9,6 +9,9 @@ Im Workspace erzeuge ein neues Projekt mit
 * readdir() <-- zeigt den Inhalt des Verzeichnisses an
 * print(read("Project.toml", String)) <-- liest eine Datei aus dem Verzeichnis und gibt den Inhalt aus.
 
+### Nützliche Links
+https://pkgdocs.julialang.org/v1/environments/
+
 
 ### Activate
 Aktivierung im Repl, wenn man sich im Package Mode befindet
@@ -51,6 +54,17 @@ Das heißt. Gibt es eine Manifest.toml, dann lade alle deklarierten Packages her
 Wichtig dabei ist, dass man **verbose = true** angibt
 ```julia
 Pkg.instantiate(verbose = true)
+```
+
+#### Precompile
+Es gibt noch **Pkg.precompile**. So wie es aussieht braucht man das in der Regel nicht, weil es automatisch bei jeder Änderung des Manifests ausgeführt wird.
+
+> This method is called automatically after any Pkg action that changes the manifest.
+
+Hilfe wie üblich via
+```julia
+using Pkg
+?Pkg.precompile
 ```
 
 ### Package
